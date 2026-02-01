@@ -1,0 +1,33 @@
+{
+
+    "hotel": [
+        {
+            "name":"Abhishek",
+            "number":"1234567890",
+            "aadhar_no":"1234-5678-9123",
+            "check_in":"16-01-2026",
+            "check_out":"20-01-2026",
+            "city":"Bhopal",
+            "people":"2"
+
+        },
+        {
+            "name":"vijay",
+            "number":"4567656688",
+            "aadhar_no":"1234-5678-9123",
+            "check_in":"21-01-2026",
+            "check_out":"26-01-2026",
+            "city":"laddakh",
+            "people":"3"
+        },
+        {
+            "name":"Rishabh",
+            "number":"4567856788",
+            "aadhar_no":"1234-5678-9123",
+            "check_in":"24-01-2026",
+            "check_out":"21-01-2026",
+            "city":"Goa",
+            "people":"6"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Datashow from "./pages/Datashow";
 
 
 const Forms = () => {
@@ -26,7 +27,11 @@ const Forms = () => {
     let [form,setform]=useState({
         myname:"",
         mynumber:"",
-        myemail:""
+        myadhar:"",
+        check_in:"",
+        check_out:"",
+        city:"",
+        people:""
     })
 
     const handlechange = (e) => {
@@ -57,6 +62,13 @@ const Forms = () => {
         else {
           // alert("form submitted sucessfully")
           <h1>form submitted sucessfully</h1>
+
+        }
+        if (valid) {
+          let api = "http://localhost:3000/hotel"
+          axios.post(api,form).then((res)=>{
+              alert("form submitted sucessfully")
+          })
         }
 
     }
@@ -64,26 +76,49 @@ const Forms = () => {
 
   return (
     <>
+    
       <h1>Form Handling</h1>
 
-
-      <form onSubmit={handlesubmit}>
+      <form onSubmit={handlesubmit} >
         enter your name:
         <input type="text" placeholder=' Enter Your Name' name="myname" value={form.myname} onChange={handlechange} /> <br /><br />
 
         enter your number:
         <input type="text" placeholder='Enter Your Number' name="mynumber" value={form.mynumber} onChange={handlechange} /> <br /><br />
 
-        enter your email:
-        <input type="text" placeholder='email' name="myemail" value={form.myemail} onChange={handlechange}/> <br /><br />
+        enter your aadhar:
+        <input type="number" placeholder='aadhar' name="myaadhar" value={form.myemail} onChange={handlechange}/> <br /><br />
 
-      <h1>my name is {form.myname} my number is {form.mynumber}  my email is {form.myemail}</h1>
+        check_in:
+        <input type="date" placeholder='check_in' name="check_in" value={form.check_in} onChange={handlechange} /> <br /><br />
+
+        check_out:
+        <input type="date" placeholder='check_out' name="check_out" value={form.check_out} onChange={handlechange} /> <br /><br />
+
+        city:
+        <select name="city" value={form.city}>
+          <option value="bhopal">Bhopal</option>
+          <option value="indore">Indore</option>
+          <option value="delhi">Delhi</option>
+          <option value="mumbai">Mumbai</option>
+        </select> <br /><br />
+
+        people:
+        <input type="number" placeholder='people' name="people" value={form.people} onChange={handlechange} /> <br /><br /> 
+
+
+
+      {/* <h1>my name is {form.myname} my number is {form.mynumber}  my email is {form.myemail}</h1> */}
 
 
       <input type="submit" value="submit"/>
 
      
       </form>
+     
+      <br /><br />
+
+      <Datashow/>
     </>
   )
 }

@@ -3,6 +3,7 @@ import "./App.css"
 import {Footer,  Footer2 } from "./Footer"
 import Navbar from "./Navbar"
 import Logo from "./assets/react.svg"
+import Datashow from "./pages/Datashow"
 
 
 
@@ -19,6 +20,8 @@ let App =()=>{
       
       <Footer/>
       <Footer2/>
+
+      <Datashow/>
     </div>
   )
 }
